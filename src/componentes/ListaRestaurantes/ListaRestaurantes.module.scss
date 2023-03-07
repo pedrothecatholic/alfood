@@ -2,3 +2,28 @@
   margin-top: 1.5rem;
   padding: 2rem;
 }
+
+.ContainerBotoes {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.Botoes {
+  width: max-content;
+  height: 5vh;
+  padding: 0.75rem;
+  font-family: inherit;
+  font-weight: 500;
+  border: 3px #f8f8f8;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.Botoes:disabled {
+  cursor: default;
+}
