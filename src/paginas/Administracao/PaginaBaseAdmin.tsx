@@ -17,7 +17,7 @@ const PaginaBaseAdmin = () => {
       <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar>
-            <Typography variant="h6">Aministração</Typography>
+            <Typography variant="h6">Administração</Typography>
             <Box
               sx={{
                 display: "flex",

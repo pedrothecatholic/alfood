@@ -7,14 +7,6 @@ import IRestaurante from "../../../interfaces/IRestaurante";
 const FormularioRestaurante = () => {
   const parametros = useParams();
 
-  useEffect(() => {
-    if (parametros.id) {
-      http
-        .get<IRestaurante>(`restaurantes/${parametros.id}/`)
-        .then((resposta) => setNomeRestaurante(resposta.data.nome));
-    }
-  }, [parametros]);
-
   const [nomeRestaurante, setNomeRestaurante] = useState("");
 
   const aoSubmeterForm = (evento: React.FormEvent<HTMLFormElement>) => {
@@ -38,6 +30,14 @@ const FormularioRestaurante = () => {
         });
     }
   };
+
+  useEffect(() => {
+    if (parametros.id) {
+      http
+        .get<IRestaurante>(`restaurantes/${parametros.id}/`)
+        .then((resposta) => setNomeRestaurante(resposta.data.nome));
+    }
+  }, [parametros]);
 
   return (
     <>
