@@ -15,7 +15,7 @@ import IRestaurante from "../../../interfaces/IRestaurante";
 import ITag from "../../../interfaces/ITag";
 
 const FormularioPrato = () => {
-  const parametros = useParams();
+  const params = useParams();
 
   const [nomePrato, setNomePrato] = useState("");
   const [descricao, setDescricao] = useState("");
@@ -39,9 +39,9 @@ const FormularioPrato = () => {
   const aoSubmeterForm = (evento: React.FormEvent<HTMLFormElement>) => {
     evento.preventDefault();
 
-    if (parametros.id) {
+    if (params.id) {
       http
-        .put(`pratos/${parametros.id}`, {
+        .put(`pratos/${params.id}`, {
           nome: nomePrato
         })
         .then(() => {
@@ -112,7 +112,6 @@ const FormularioPrato = () => {
           value={nomePrato}
           onChange={(evento) => setNomePrato(evento.target.value)}
           label="Nome do Prato"
-          variant="standard"
           fullWidth
           required
           margin="dense"
@@ -121,7 +120,6 @@ const FormularioPrato = () => {
           value={descricao}
           onChange={(evento) => setDescricao(evento.target.value)}
           label="Descrição do Prato"
-          variant="standard"
           fullWidth
           required
           margin="dense"
@@ -160,7 +158,7 @@ const FormularioPrato = () => {
         <Button
           sx={{ marginTop: 1 }}
           type="submit"
-          variant="outlined"
+          variant="contained"
           fullWidth>
           Salvar
         </Button>

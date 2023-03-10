@@ -47,9 +47,13 @@ const AdministracaoPratos = () => {
               <TableCell>{prato.nome}</TableCell>
               <TableCell>{prato.tag}</TableCell>
               <TableCell>
-                <a href={prato.imagem} target="blank" rel="noreferrer">
-                  Ver Imagem
-                </a>
+                {prato.imagem ? (
+                  <a href={prato.imagem} target="blank" rel="noreferrer">
+                    Ver Imagem
+                  </a>
+                ) : (
+                  "Não há imagem aqui"
+                )}
               </TableCell>
               <TableCell>
                 <Link to={`/admin/pratos/${prato.id}`}>[ editar ]</Link>
